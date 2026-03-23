@@ -8,19 +8,22 @@
 int main( void ) {
 
     // create some nodes
+    Node *zero = createNode(createData(0));
     Node *first = createNode(createData(1));
     Node *second = createNode(createData(2));
     Node *third = createNode(createData(3));
-
+    Node *fourth = createNode(createData(6));
     // link the nodes
+    zero->next = first;
     first->next = second;
     second->next = third;
+    third->next = fourth;
     
     // print the data by following links
-    traverseI( first );
+    traverseW( zero );
 
     // free all node memory (using traversal)
-    freeNodes( first );
+    freeNodes( zero );
 
     return 0;
 }
