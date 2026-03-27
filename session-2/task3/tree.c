@@ -63,9 +63,11 @@ void traversePre( Node *loc ) {
  * recursive traversal in postorder
  */
 void traversePost( Node *loc ) {
-    
-    // implement here
-
+    if ( loc != NULL ) {
+        traversePost( child[1]->root );
+        traversePost( child[0]->root );
+        printf(" Node %d\n",loc->data->value);
+    }
     return;
 }
 
